@@ -1,0 +1,20 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main  # Puedes cambiar esto según la rama que desees que active el flujo de trabajo
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Puedes elegir el sistema operativo que prefieras
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm install  # O el gestor de dependencias que utilices
+
+      - name: Build project
+        run: npm run build 
